@@ -1,11 +1,14 @@
 const { Telegraf, Markup } = require("telegraf");
-const dotenv = require("dotenv");
+// const dotenv = require("dotenv");
 const askAI = require("./ai");
 const fs = require("fs");
 
-dotenv.config();
+const API_URL = 'https://api.intelligence.io.solutions/api/v1/chat/completions';
+const API_KEY = 'io-v2-eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJvd25lciI6IjE4Y2UxMmEzLWRhNDQtNGZmNy1hYTU5LTVjZjE2NGEzZDkwZiIsImV4cCI6NDg5ODM0MTYyMH0.Ly733kw9jjb6GbO1dvU5MDwX4h32f835y6E5Oks1uEsTGSv1Lut3NSnEl3lvUxj5NpjcjVevNtM-Mwxy5otz6Q';
 
-const bot = new Telegraf(process.env.TG_TOKEN);
+// dotenv.config();
+
+const bot = new Telegraf(process.TG_TOKEN);
 let chatMode = false;
 
 // Admin Telegram ID
